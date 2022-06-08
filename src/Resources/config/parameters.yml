@@ -1,0 +1,3 @@
+parameters:
+    api_header:
+    "Access-Control-Allow-Origin": "*"

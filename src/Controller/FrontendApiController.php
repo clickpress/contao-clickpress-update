@@ -31,7 +31,8 @@ class FrontendApiController extends AbstractController
     {
         sleep(1);
         $version = ContaoCoreBundle::getVersion();
+        $header = $this->getParameter('api_header');
 
-        return new JsonResponse(['token' => $token, 'version' => $version, 'status' => 200]);
+        return new JsonResponse(['token' => $token, 'version' => $version, 200, $header);
     }
 }
