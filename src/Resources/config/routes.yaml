@@ -1,0 +1,3 @@
+clickpress_update:
+  resource: '../../Controller'
+  type: annotation
