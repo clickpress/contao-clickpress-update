@@ -1,11 +1,11 @@
 services:
-  _defaults:
-    autoconfigure: true
+    _defaults:
+        autoconfigure: true
 
-  Clickpress\Update\Controller\FrontendApiController:
-    tags:
-      - 'terminal42_service_annotation'
-      - 'controller.service_arguments'
-    calls:
-      - [setContainer, ['@service_container']]
-    public: true
+    Clickpress\Update\Controller\FrontendApiController:
+        tags:
+            - "terminal42_service_annotation"
+            - "controller.service_arguments"
+        calls:
+            - [setContainer, ["@service_container"]]
+        public: true
