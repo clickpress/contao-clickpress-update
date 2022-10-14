@@ -2,14 +2,6 @@
 
 declare(strict_types=1);
 
-/*
- * This file is part of the metten-promocodes-bundle.
- *
- * (c) Stefan Schulz-Lauterbach
- *
- * @license proprietary
- */
-
 namespace Clickpress\Update\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
