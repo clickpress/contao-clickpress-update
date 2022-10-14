@@ -1,3 +1,5 @@
 parameters:
+    clickpress_update.token: ''
     api_header:
     "Access-Control-Allow-Origin": "*"
+
