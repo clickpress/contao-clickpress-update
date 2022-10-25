@@ -2,14 +2,6 @@
 
 declare(strict_types=1);
 
-/*
- * This file is part of the metten-promocodes-bundle.
- *
- * (c) Stefan Schulz-Lauterbach
- *
- * @license proprietary
- */
-
 namespace Clickpress\Update\Controller;
 
 use Contao\CoreBundle\ContaoCoreBundle;
@@ -31,7 +23,6 @@ class FrontendApiController extends AbstractController
 {
     public function __invoke($token): JsonResponse
     {
-        sleep(1);
         $confToken = System::getContainer()->getParameter('clickpress_update.token');
 
         if ($confToken !== $token) {
