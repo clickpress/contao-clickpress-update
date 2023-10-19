@@ -45,5 +45,13 @@
         "cs-fixer": [
             "vendor/bin/ecs check src/ tests/ --fix --ansi"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "php-http/discovery": false,
+            "dealerdirect/phpcodesniffer-composer-installer": false,
+            "contao/manager-plugin": true
+        }
     }
 }

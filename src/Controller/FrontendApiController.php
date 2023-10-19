@@ -26,7 +26,7 @@ class FrontendApiController extends AbstractController
         $confToken = System::getContainer()->getParameter('clickpress_update.token');
 
         if ($confToken !== $token) {
-            return new JsonResponse(['token' => $token, 'version' => null], 200, $header);
+            return new JsonResponse(['token' => $token, 'version' => null], 200);
         }
 
         $version = ContaoCoreBundle::getVersion();
