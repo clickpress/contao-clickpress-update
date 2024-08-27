@@ -1,24 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Clickpress\Update\Controller;
 
 use Contao\CoreBundle\ContaoCoreBundle;
-use Contao\Environment;
 use Contao\System;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
+use Symfony\Component\Routing\Attribute\Route;
 
-/**
- * @Route(
- *     "/api/update/{token}",
- *     name=FrontendApiController::class,
- *     defaults={"_scope": "frontend"},
- *     methods={"GET"})
- */
+
+#[Route('/api/update/{token}', name: 'api_update', defaults: ['_scope' => 'frontend'])]
 class FrontendApiController extends AbstractController
 {
     public function __invoke($token): JsonResponse

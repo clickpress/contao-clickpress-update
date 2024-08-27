@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Clickpress\Update\ContaoManager;
 
 use Clickpress\Update\ClickpressUpdateBundle;
@@ -15,7 +13,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
-    public function getBundles(ParserInterface $parser)
+    public function getBundles(ParserInterface $parser): array
     {
         return [
             BundleConfig::create(ClickpressUpdateBundle::class)

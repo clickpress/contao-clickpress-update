@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Clickpress\Update\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
