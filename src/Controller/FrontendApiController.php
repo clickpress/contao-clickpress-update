@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 
 
-#[Route('/api/update/{token}', name: 'api_update', defaults: ['_scope' => 'frontend'])]
+#[Route(path: '/api/update/{token}', name: 'api_update', defaults: ['_scope' => 'frontend'])]
 class FrontendApiController extends AbstractController
 {
     public function __invoke($token): JsonResponse
