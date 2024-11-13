@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Clickpress\Update\ContaoManager;
 
 use Clickpress\Update\ClickpressUpdateBundle;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Clickpress\Update\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
@@ -13,7 +15,7 @@ class ClickpressUpdateExtension extends Extension
     {
         $loader = new YamlFileLoader(
             $container,
-            new FileLocator(__DIR__.'/../../config')
+            new FileLocator(__DIR__.'/../../config'),
         );
 
         $loader->load('parameters.yml');
