@@ -32,6 +32,12 @@ class FrontendApiController extends AbstractController
         $version = ContaoCoreBundle::getVersion();
         $header = ['Access-Control-Allow-Origin' => '*'];
 
-        return new JsonResponse(['token' => $token, 'version' => $version], 200, $header);
+        $response = [
+            'token' => $token,
+            'version' => $version,
+            'php' => PHP_VERSION,
+        ];
+
+        return new JsonResponse($response, 200, $header);
     }
 }
