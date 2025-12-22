@@ -23,7 +23,7 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
         ];
     }
 
-    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel): array
     {
         return $resolver
             ->resolve(__DIR__.'/../Controller')
