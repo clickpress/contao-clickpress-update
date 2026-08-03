@@ -1,8 +1,21 @@
 <?php
 
-use Nelmio\CorsBundle\NelmioCorsBundle;
+declare(strict_types=1);
+
+namespace Clickpress\Update\ContaoManager;
+
+use Clickpress\Update\ClickpressUpdateBundle;
+use Contao\CoreBundle\ContaoCoreBundle;
+use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
+use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
+use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use Contao\ManagerPlugin\Config\ContainerBuilder;
 use Contao\ManagerPlugin\Config\ExtensionPluginInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
+use Nelmio\CorsBundle\NelmioCorsBundle;
+use Symfony\Component\Config\Loader\LoaderResolverInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\Routing\RouteCollection;
 
 class Plugin implements BundlePluginInterface, RoutingPluginInterface, ExtensionPluginInterface
 {
@@ -13,6 +26,14 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface, Extension
             BundleConfig::create(ClickpressUpdateBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class, NelmioCorsBundle::class]),
         ];
+    }
+
+    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel): RouteCollection
+    {
+        return $resolver
+            ->resolve(__DIR__.'/../Controller')
+            ->load(__DIR__.'/../Controller')
+        ;
     }
 
     public function getExtensionConfig($extensionName, array $extensionConfigs, ContainerBuilder $container): array
